@@ -6,7 +6,7 @@ import hashlib
 import uuid
 
 
-class User():
+class User:
     """
     User class:
     - id: public string unique (uuid)
@@ -19,7 +19,7 @@ class User():
         - assigned an unique `id`
         """
         self.id = str(uuid.uuid4())
-        self.__password
+        self.__password = None
 
     @property
     def password(self):
@@ -36,7 +36,7 @@ class User():
         - `None` if `pwd` is not a string
         - Hash `pwd` in MD5 before assign to `__password`
         """
-        if pwd is None or type(pwd) is not str:
+        if pwd is None or not isinstance(pwd, str):
             self.__password = None
         else:
             self.__password = hashlib.md5(pwd.encode()).hexdigest().lower()
