@@ -7,7 +7,7 @@
 result = []
 ARGV.each do |arg|
     # skip if not integer
-    next unless arg !~ /^-?[0-9]+$/
+    next unless arg =~ /^-?\d+$/
 
     # convert to integer
     i_arg = arg.to_i
