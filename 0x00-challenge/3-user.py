@@ -6,7 +6,7 @@ import hashlib
 import uuid
 
 
-class User:
+class User():
     """
     User class:
     - id: public string unique (uuid)
